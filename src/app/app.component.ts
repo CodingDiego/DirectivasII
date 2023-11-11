@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Empleado } from './empleado.model';
 import { ChildEmployeeComponent } from './child-employee/child-employee.component';
+import { Empleado } from './empleado.model';
 
 @Component({
   selector: 'app-root',
@@ -23,15 +23,15 @@ export class AppComponent {
     new Empleado("Ulises","Roldan","Backend Developer", 250),
   ];
 
-  agregarEmpleado(){
-
-    let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.empleados.push(miEmpleado);
-  }
-
   cuadroNombre:string = "";
   cuadroApellido:string = "";
   cuadroCargo:string = "";
   cuadroSalario:number = 0;
 
+
+  agregarEmpleado(){
+
+    let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.empleados.push(miEmpleado);
+  }
 }

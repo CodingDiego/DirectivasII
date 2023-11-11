@@ -9,6 +9,13 @@
           {{itemEmpleado.nombre}} {{itemEmpleado.apellido}} {{itemEmpleado.cargo}} {{itemEmpleado.salario}}
   
         </div>
+
+        <app-employee-details (employeeDetails)="addDetails($event)"></app-employee-details>
+
+        <ul style="list-style: none;">
+          <li *ngFor="let detail of arrayDetails">{{detail}}</li>
+        </ul>
+
       </div>
     </div>
   </div>
