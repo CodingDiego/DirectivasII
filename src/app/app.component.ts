@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ChildEmployeeComponent } from './child-employee/child-employee.component';
+import { ChildEmployeeComponent } from './employee-details/child-employee/child-employee.component';
 import { Empleado } from './empleado.model';
 import { EmployeeServiceService } from './employee-service.service';
 import { EmployeDataService } from './employe-data.service';

@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmployeeServiceService } from '../employee-service.service';
 
 @Component({
   selector: 'app-employee-details',

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Empleado } from '../empleado.model';
-import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
+import { Empleado } from '../../empleado.model';
+import { EmployeeDetailsComponent } from '../employee-details.component';
 
 @Component({
   selector: 'app-child-employee',
