@@ -12,40 +12,45 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, ChildEmployeeComponent, HomeComponent, ProyectosComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    FormsModule,
+    ChildEmployeeComponent,
+    HomeComponent,
+    ProyectosComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [EmployeeServiceService, EmployeDataService, RouterModule]
+  providers: [EmployeeServiceService, EmployeDataService, RouterModule],
 })
 
-
-
 /*----------------------------------------------------------*/
-
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Directiva Empleados';
 
-  constructor(private miService:EmployeeServiceService, private DataService:EmployeDataService) { 
-    
-  }
+  constructor(
+    private miService: EmployeeServiceService,
+    private DataService: EmployeDataService,
+  ) {}
   ngOnInit(): void {
-    this.empleados=this.DataService.empleados;
+    this.empleados = this.DataService.empleados;
   }
 
-  
+  empleados: Empleado[] = [];
 
-  empleados:Empleado[]=[]
+  cuadroNombre: string = '';
+  cuadroApellido: string = '';
+  cuadroCargo: string = '';
+  cuadroSalario: number = 0;
 
-  cuadroNombre:string = "";
-  cuadroApellido:string = "";
-  cuadroCargo:string = "";
-  cuadroSalario:number = 0;
-
-   
-
-  agregarEmpleado(){
-
-    let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+  agregarEmpleado() {
+    let miEmpleado = new Empleado(
+      this.cuadroNombre,
+      this.cuadroApellido,
+      this.cuadroCargo,
+      this.cuadroSalario,
+    );
     //this.miService.showPrompt(`${miEmpleado.nombre} ${miEmpleado.apellido} es ${miEmpleado.cargo} con un salario de ${miEmpleado.salario}k, y esta siendo agregado`)
     this.DataService.addEmployeeService(miEmpleado);
   }
