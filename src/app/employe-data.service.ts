@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { EmployeeServiceService } from './employee-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,10 @@ export class EmployeDataService {
     new Empleado("Ulises","Roldan","Backend Developer", 250),
   ];
 
-  addEmploteeService(empleado:Empleado){
+  addEmployeeService(empleado:Empleado){
+    this.ServicioVentanaEmergente.showPrompt("Persona que se va a agregar:" + "\n" + empleado.nombre + "\n" + "Salario de " + empleado.salario);
     this.empleados.push(empleado);
   }
 
-  constructor() { }
+  constructor(private ServicioVentanaEmergente:EmployeeServiceService ) { }
 }

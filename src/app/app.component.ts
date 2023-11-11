@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -15,25 +15,31 @@ import { EmployeDataService } from './employe-data.service';
   styleUrls: ['./app.component.css'],
   providers: [EmployeeServiceService, EmployeDataService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Directiva Empleados';
 
   constructor(private miService:EmployeeServiceService, private DataService:EmployeDataService) { 
+    
+  }
+  ngOnInit(): void {
     this.empleados=this.DataService.empleados;
   }
 
+  
+
+  empleados:Empleado[]=[]
 
   cuadroNombre:string = "";
   cuadroApellido:string = "";
   cuadroCargo:string = "";
   cuadroSalario:number = 0;
 
-  empleados:Empleado[]=[]
+   
 
   agregarEmpleado(){
 
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
     this.miService.showPrompt(`${miEmpleado.nombre} ${miEmpleado.apellido} es ${miEmpleado.cargo} con un salario de ${miEmpleado.salario}k, y esta siendo agregado`)
-    this.DataService.addEmploteeService(miEmpleado);
+    this.DataService.addEmployeeService(miEmpleado);
   }
 }
