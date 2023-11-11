@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ChildEmployeeComponent } from './employee-details/child-employee/child-employee.component';
 import { Empleado } from './empleado.model';
 import { EmployeeServiceService } from './employee-service.service';
 import { EmployeDataService } from './employe-data.service';
+import { HomeComponent } from './home/home.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, ChildEmployeeComponent],
+  imports: [CommonModule, RouterOutlet, FormsModule, ChildEmployeeComponent, HomeComponent, ProyectosComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [EmployeeServiceService, EmployeDataService]
+  providers: [EmployeeServiceService, EmployeDataService, RouterModule]
 })
+
+
+
+/*----------------------------------------------------------*/
+
 export class AppComponent implements OnInit{
   title = 'Directiva Empleados';
 
