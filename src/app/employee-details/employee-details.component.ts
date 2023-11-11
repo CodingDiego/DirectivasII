@@ -12,13 +12,11 @@ import { EmployeeServiceService } from '../employee-service.service';
 export class EmployeeDetailsComponent {
   @Output() employeeDetails = new EventEmitter<string>();
 
-  constructor(private miService:EmployeeServiceService){
-
-  }
+  //constructor(private miService:EmployeeServiceService){}
 
   addEmployeeDetails(value: string){
-    this.miService.showPrompt(`se ha agregado "${value}" a las caracteristicas del empleado`)
-    this.employeeDetails.emit(value)
+    //this.miService.showPrompt(`se ha agregado "${value}" a las caracteristicas del empleado`)
+   this.employeeDetails.emit(value)
   }
 
   
