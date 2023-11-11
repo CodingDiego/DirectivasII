@@ -4,16 +4,20 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ChildEmployeeComponent } from './child-employee/child-employee.component';
 import { Empleado } from './empleado.model';
+import { EmployeeServiceService } from './employee-service.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, FormsModule, ChildEmployeeComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [EmployeeServiceService]
 })
 export class AppComponent {
   title = 'Directiva Empleados';
+
+  constructor(private miService:EmployeeServiceService) { }
 
   empleados:Empleado[]=[
     new Empleado("Diego","Palacios","Frontend Developer", 500),
@@ -32,6 +36,7 @@ export class AppComponent {
   agregarEmpleado(){
 
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.miService.showPrompt(`${miEmpleado.nombre} ${miEmpleado.apellido} es ${miEmpleado.cargo} con un salario de ${miEmpleado.salario}k, y esta siendo agregado`)
     this.empleados.push(miEmpleado);
   }
 }
