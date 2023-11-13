@@ -53,13 +53,20 @@
   <button
     type="submit"
     class="btn btn-primary"
-    style="margin-top: 4rem"
+    style="margin-top: 2rem"
     (click)="editarEmpleado()"
   >
     editar Empleado
   </button>
-  <button class="btn btn-primary" style="margin-top: 4rem" (click)="goHome()">
+  <button class="btn btn-primary" style="margin-top: 2rem" (click)="goHome()">
     Volver al inicio
+  </button>
+  <button
+    class="btn btn-primary"
+    style="margin-top: 2rem"
+    (click)="deleteEmployee(id)"
+  >
+    Eliminar Empleado
   </button>
   <br />
 </form>
