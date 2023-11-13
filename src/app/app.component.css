@@ -1,0 +1,24 @@
+.navbar {
+    background-color: #222;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.navbar-brand {
+    color: #9d9d9d;
+}
+
+.navbar-nav>li>a {
+    color: #9d9d9d;
+}
+
+.navbar-nav>.active>a {
+    color: white;
+    background-color: #080808;
+}
+
+.navbar-nav>li>a:hover,
+.navbar-nav>.active>a:hover {
+    color: white;
+    background-color: #333;
+}
