@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ChildEmployeeComponent } from './employee-details/child-employee/child-employee.component';
-import { Empleado } from './empleado.model';
-import { EmployeeServiceService } from './employee-service.service';
-import { EmployeDataService } from './employe-data.service';
 import { HomeComponent } from './home/home.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 
@@ -16,42 +17,17 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
     CommonModule,
     RouterOutlet,
     FormsModule,
-    ChildEmployeeComponent,
     HomeComponent,
     ProyectosComponent,
+    RouterModule,
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [EmployeeServiceService, EmployeDataService, RouterModule],
+  providers: [],
 })
 
 /*----------------------------------------------------------*/
-export class AppComponent implements OnInit {
-  title = 'Directiva Empleados';
-
-  constructor(
-    private miService: EmployeeServiceService,
-    private DataService: EmployeDataService,
-  ) {}
-  ngOnInit(): void {
-    this.empleados = this.DataService.empleados;
-  }
-
-  empleados: Empleado[] = [];
-
-  cuadroNombre: string = '';
-  cuadroApellido: string = '';
-  cuadroCargo: string = '';
-  cuadroSalario: number = 0;
-
-  agregarEmpleado() {
-    let miEmpleado = new Empleado(
-      this.cuadroNombre,
-      this.cuadroApellido,
-      this.cuadroCargo,
-      this.cuadroSalario,
-    );
-    //this.miService.showPrompt(`${miEmpleado.nombre} ${miEmpleado.apellido} es ${miEmpleado.cargo} con un salario de ${miEmpleado.salario}k, y esta siendo agregado`)
-    this.DataService.addEmployeeService(miEmpleado);
-  }
-}
+export class AppComponent {}

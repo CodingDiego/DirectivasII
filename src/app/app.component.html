@@ -1,64 +1,17 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand">Estamos en </a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Mis ideas</a></li>
-      <li><a href="#">Proyectos</a></li>
-      <li><a href="#">Quien Soy</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li class="active">
+        <a routerLink="" routerLinkActive="active">Home</a>
+      </li>
+      <li><a routerLink="/proyectos">Proyectos</a></li>
+      <li><a routerLink="/quien" routerLinkActive="active">Quien Soy</a></li>
+      <li><a routerLink="contacto" routerLinkActive="active">Contacto</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="container">
-  <div class="col" style="text-align: center; justify-content: center;"><h1>{{title}}</h1></div>
-
-  <br><br/>
-
-  <form class="form-group row">
-
-   <div class="form-group col-md-3">
-
-    <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
-
-   </div>
-
-   <div class="form-group col-md-3">
-
-    <label for="apellido">Apellido:</label>
-    <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="cuadroApellido">
-
-   </div>
-
-   <div class="form-group col-md-3">
-
-    <label for="cargo">Cargo:</label>
-    <input type="text" name="cargo" id="cargo" placeholder="Cargo" class="form-control" [(ngModel)]="cuadroCargo">
-
-   </div>
-
-   <div class="form-group col-md-3">
-
-    <label for="salario">Salario:</label>
-    <input type="number" name="salario" id="salario" placeholder="Salario" class="form-control" [(ngModel)]="cuadroSalario">
-
-   </div>
-  
-   <br>
-   <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()" style="margin-top: 1rem;">Cargar Empleado</button>
-   <br>
-
-  </form>
-
-  <br><br/>
-
-  <br><br/>
-
-</div>
-
-<app-child-employee *ngFor="let empleado of empleados; let i = index" [itemEmpleado]="empleado" [indice]="i"></app-child-employee>
-
+<router-outlet></router-outlet>
