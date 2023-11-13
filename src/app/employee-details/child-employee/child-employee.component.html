@@ -1,21 +1,21 @@
-
-
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <div >
-  
-          {{indice+1}}
-          {{itemEmpleado.nombre}} {{itemEmpleado.apellido}} {{itemEmpleado.cargo}} {{itemEmpleado.salario}}
-  
-        </div>
-
-        <app-employee-details (employeeDetails)="addDetails($event)"></app-employee-details>
-
-        <ul style="list-style: none;">
-          <li *ngFor="let detail of arrayDetails">{{detail}}</li>
-        </ul>
-
+  <div class="row">
+    <div class="col">
+      <div>
+        <a [routerLink]="['/update', indice]" routerLinkActive="active">
+          {{ indice + 1 }}
+          {{ itemEmpleado.nombre }} {{ itemEmpleado.apellido }}
+          {{ itemEmpleado.cargo }} {{ itemEmpleado.salario }}
+        </a>
       </div>
+
+      <app-employee-details
+        (employeeDetails)="addDetails($event)"
+      ></app-employee-details>
+
+      <ul style="list-style: none">
+        <li *ngFor="let detail of arrayDetails">{{ detail }}</li>
+      </ul>
     </div>
   </div>
+</div>

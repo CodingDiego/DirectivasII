@@ -1,4 +1,4 @@
-<h1>Form para agregar empleados a la lista</h1>
+<h1>Form para editar empleados de la lista</h1>
 
 <form class="form-group row">
   <div class="form-group col-md-3">
@@ -50,9 +50,16 @@
   </div>
 
   <br />
-  <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()">
-    Cargar Empleado
+  <button
+    type="submit"
+    class="btn btn-primary"
+    style="margin-top: 4rem"
+    (click)="editarEmpleado()"
+  >
+    editar Empleado
   </button>
-  <button class="btn btn-primary" (click)="goHome()">Volver al inicio</button>
+  <button class="btn btn-primary" style="margin-top: 4rem" (click)="goHome()">
+    Volver al inicio
+  </button>
   <br />
 </form>
